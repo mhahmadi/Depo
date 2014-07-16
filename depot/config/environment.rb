@@ -12,7 +12,7 @@ Depot::Application.configure do
 		domain: "gmail.com",
 		authentication: "plain",
 		user_name: "mohamadhasan.ahmadi@gmail.com",
-		password: "xaoiwzrjcuqlvwvz",
+		password: "zbaswotakuoniwau",
 		enable_starttls_auto: true
 	}
 end

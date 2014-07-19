@@ -11,6 +11,12 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:users)
   end
 
+  test "should not get index if not authenticated" do
+    logout
+    get :index
+    assert_redirected_to login_url
+  end
+
   test "should get new" do
     get :new
     assert_response :success

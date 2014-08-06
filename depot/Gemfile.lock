@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/asmaloney/rails-erd.git
+  revision: bb84befbd4404bbd74af37a03257364a9679ddfd
+  specs:
+    rails-erd (1.1.1)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      choice (~> 0.1.6)
+      ruby-graphviz (~> 1.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -34,6 +44,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    choice (0.1.6)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -89,6 +100,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    ruby-graphviz (1.0.9)
     rvm-capistrano (1.5.3)
       capistrano (~> 2.15.4)
     sass (3.2.19)
@@ -136,6 +148,7 @@ DEPENDENCIES
   jquery-ui-rails
   mysql2
   rails (= 4.0.0)
+  rails-erd!
   rvm-capistrano
   sass-rails (~> 4.0.0)
   sdoc

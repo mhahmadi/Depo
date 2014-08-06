@@ -50,3 +50,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'debugger', group: [:development, :test]
 
 gem 'rvm-capistrano', group: :development
+
+gem 'rails-erd', git: "https://github.com/asmaloney/rails-erd.git"

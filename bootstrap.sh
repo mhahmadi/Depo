@@ -9,7 +9,7 @@ MYSQL_USER_PASSWORD="vagrant"
 
 echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASSWORD" | debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $MYSQL_ROOT_PASSWORD" | debconf-set-selections
-sudo apt-get -y install apache2 curl git vim mysql-client mysql-server libmysql-ruby libmysqlclient-dev
+sudo apt-get -y install apache2 curl git vim mysql-client mysql-server libmysql-ruby libmysqlclient-dev graphviz
 
 \curl -L https://get.rvm.io | sudo bash -s stable
 

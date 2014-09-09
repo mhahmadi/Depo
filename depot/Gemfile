@@ -52,3 +52,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'rvm-capistrano', group: :development
 
 gem 'rails-erd', git: "https://github.com/asmaloney/rails-erd.git"
+
+gem 'haml', '~> 4.0'

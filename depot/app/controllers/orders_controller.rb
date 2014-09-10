@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.order('created_at DESC').page(params[:page]).per(params[:per_page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /orders/1

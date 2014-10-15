@@ -5,8 +5,10 @@
   <title><%= t('.window_title') %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= yield(:head) %>
   <%= auto_discovery_link_tag(:atom, products_url(format: 'atom')) %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, :name => "stripe-key", :content => Rails.configuration.stripe[:publishable_key] %>
 </head>
 <!-- END:head -->
 <body class="<%= controller.controller_name %>">

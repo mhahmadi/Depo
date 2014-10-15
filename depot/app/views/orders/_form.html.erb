@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+<% end %>
+
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +31,22 @@
     <%= f.label :pay_type, t('.pay_type') %><br>
     <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('.pay_prompt_html') %>
   </div>
+  <%= f.hidden_field :stripe_card_token %>
+  <span class='payment-errors'></span>
+  <div class="field">
+    <%= label_tag :card_number, "Card #" %>
+    <%= text_field_tag :card_number, nil, name: nil, data: {stripe: "number"} %>
+  </div>
+  <div class="field">
+    <%= label_tag :card_cvc, "CVC" %>
+    <%= text_field_tag :card_cvc, nil, name: nil, data: {stripe: "cvc"} %>
+  </div>
+  <div class="field">
+    <%= label_tag :card_expiration, "Expiration" %>
+    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", data: {stripe: "exp-month"}} %>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", data: {stripe: "exp-year"}} %>
+  </div>  
   <div class="actions">
-    <%= f.submit t('.submit') %>
+    <button type="submit">Place Order</button>  
   </div>
 <% end %>
